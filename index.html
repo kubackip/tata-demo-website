@@ -1,187 +1,252 @@
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Webpage - Portfolio</title>
-    <meta name="description" content="Nowoczesna strona-wizytówka typu single page, zaprojektowana z osobnymi panelami dla nawigacji, treści i stopki.">
-    
-    <!-- Skrypt Tailwind CSS v3 (Play CDN) -->
+    <meta name="description"
+        content="A modern, single-page business card website with separate panels for navigation, content, and footer.">
+
+    <!-- Tailwind CSS v3 Script (Play CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Konfiguracja niestandardowa dla Tailwind CSS -->
+
+    <!-- Custom configuration for Tailwind CSS -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: '#3b82f6', // Kolor akcentujący (niebieski)
-              'page-bg': '#f1f5f9', // Tło całej strony (jasnoszary)
-              'panel-bg': '#ffffff', // Tło dla paneli (biały)
-              'text-primary': '#1e293b', // Główny kolor tekstu
-              'text-secondary': '#64748b', // Drugorzędny kolor tekstu
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            boxShadow: {
-              'main': '0 10px B0px -15px rgba(0, 0, 0, 0.1)',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#3b82f6', // Accent color (blue)
+                        'page-bg': '#f1f5f9', // Page background (light gray)
+                        'panel-bg': '#ffffff', // Background for panels (white)
+                        'text-primary': '#1e293b', // Primary text color
+                        'text-secondary': '#64748b', // Secondary text color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'main': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
-    
-    <!-- Import czcionki Inter z Google Fonts -->
+
+    <!-- Import Inter font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ================================================== -->
+    <!-- Custom styles for Hamburger-to-X animation -->
+    <!-- ================================================== -->
+    <style>
+        .hamburger-button .hamburger-line {
+            /* Płynne przejście dla animacji */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        /* ZMIANA: Poprawiono animację 'X', aby była idealnie prosta */
+        .hamburger-button.is-active .hamburger-line-top {
+            /* Najpierw przesuwamy linię w dół o 8px, aby znalazła się w centrum, a potem obracamy */
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-button.is-active .hamburger-line-middle {
+            /* Ukrywamy środkową linię */
+            opacity: 0;
+        }
+
+        .hamburger-button.is-active .hamburger-line-bottom {
+            /* Najpierw przesuwamy linię w górę o 8px, aby znalazła się w centrum, a potem obracamy */
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
 </head>
+
 <body class="bg-page-bg text-text-primary font-sans p-4 md:p-8">
 
-    <!-- ================================================== -->
-    <!-- Wrapper dla wszystkich paneli -->
-    <!-- ================================================== -->
-    <div class="max-w-7xl mx-auto space-y-6">
+    <div class="max-w-7xl mx-auto grid gap-6">
 
-        <!-- ================================================== -->
-        <!-- Panel Nagłówka (Header) -->
-        <!-- ================================================== -->
-        <header class="bg-panel-bg rounded-2xl shadow-main overflow-hidden">
+        <header
+            class="bg-panel-bg rounded-2xl shadow-main overflow-hidden sticky top-4 z-50 transition-all duration-300">
             <div class="mx-auto px-6">
                 <div class="flex justify-between items-center h-20">
-                    <!-- Tytuł strony -->
                     <a href="#" class="text-xl font-bold text-text-primary hover:text-accent transition-colors">
                         my webpage
                     </a>
-                    
-                    <!-- Menu nawigacyjne dla dużych ekranów (solid text) -->
+
                     <nav class="hidden md:flex">
                         <ul class="flex space-x-8">
-                            <li><a href="#about" class="text-text-secondary hover:text-accent font-medium transition-colors">O mnie</a></li>
-                            <li><a href="#projects" class="text-text-secondary hover:text-accent font-medium transition-colors">Projekty</a></li>
-                            <li><a href="#contact" class="text-text-secondary hover:text-accent font-medium transition-colors">Kontakt</a></li>
+                            <li><a href="#about"
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">About
+                                    me</a></li>
+                            <li><a href="#projects"
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Projects</a>
+                            </li>
+                            <li><a href="#contact"
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Contact</a>
+                            </li>
                         </ul>
                     </nav>
-                    
-                    <!-- Przycisk Hamburgera dla widoku mobilnego -->
+
                     <div class="md:hidden">
-                        <button id="hamburger-button" aria-label="Otwórz menu" aria-controls="mobile-menu" aria-expanded="false" class="text-text-primary focus:outline-none">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
+                        <!-- ================================================== -->
+                        <!-- ZMIANA: Poprawiono strukturę hamburgera, aby zapewnić jednakową grubość kresek -->
+                        <!-- Zamiast 'my-1.5' na środkowej kresce, używamy 'space-y-1.5' na kontenerze, co zapewnia spójne renderowanie. -->
+                        <!-- ================================================== -->
+                        <button id="hamburger-button" aria-label="Open menu" aria-controls="mobile-menu"
+                            aria-expanded="false"
+                            class="hamburger-button text-text-primary focus:outline-none w-8 h-8 flex flex-col justify-center items-center">
+                            <div class="space-y-1.5">
+                                <span
+                                    class="hamburger-line hamburger-line-top block w-6 h-0.5 bg-current transform"></span>
+                                <span class="hamburger-line hamburger-line-middle block w-6 h-0.5 bg-current"></span>
+                                <span
+                                    class="hamburger-line hamburger-line-bottom block w-6 h-0.5 bg-current transform"></span>
+                            </div>
                         </button>
                     </div>
                 </div>
-                
-                <!-- Menu mobilne (rozwijalne) -->
-                <div id="mobile-menu" class="hidden md:hidden pb-4">
-                    <ul class="flex flex-col space-y-4 pt-4 border-t border-slate-200">
-                        <li><a href="#about" class="block text-text-secondary hover:text-accent font-medium transition-colors">O mnie</a></li>
-                        <li><a href="#projects" class="block text-text-secondary hover:text-accent font-medium transition-colors">Projekty</a></li>
-                        <li><a href="#contact" class="block text-text-secondary hover:text-accent font-medium transition-colors">Kontakt</a></li>
+
+                <div id="mobile-menu"
+                    class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                    <ul class="flex flex-col space-y-4 pt-4 pb-4 border-t border-slate-200">
+                        <li><a href="#about"
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">About
+                                me</a></li>
+                        <li><a href="#projects"
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Projects</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </header>
 
-        <!-- ================================================== -->
-        <!-- Panel Głównej Treści (Main) -->
-        <!-- ================================================== -->
-        <main class="bg-panel-bg rounded-2xl shadow-main p-6 md:p-10">
-            <!-- Sekcja "O mnie" (#about) -->
+        <main id="main-content" class="bg-panel-bg rounded-2xl shadow-main p-6 md:p-10 transition-all duration-300">
+            <!-- "About me" section (#about) -->
             <section id="about" class="py-12">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                    <!-- Zdjęcie profilowe -->
+                    <!-- Profile picture -->
                     <div class="md:col-span-1 flex justify-center">
-                        <img src="https://placehold.co/250x250/e2e8f0/334155" alt="Zdjęcie profilowe" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg">
+                        <img src="https://placehold.co/250x250/e2e8f0/334155" alt="Profile picture"
+                            class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg">
                     </div>
-                    <!-- Biografia -->
+                    <!-- Biography -->
                     <div class="md:col-span-2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Nagłówek sekcji o mnie</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">About me section header</h2>
                         <p class="text-lg text-text-secondary mb-6 max-w-2xl mx-auto md:mx-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Sekcja "Projekty" (#projects) -->
+            <!-- "Projects" section (#projects) -->
             <section id="projects" class="py-12">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Wybrane Realizacje</h2>
-                    <p class="text-lg text-text-secondary mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Selected Projects</h2>
+                    <p class="text-lg text-text-secondary mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Karta projektu 1 -->
-                    <div class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/3b82f6/ffffff" alt="Zrzut ekranu projektu 1" class="w-full h-48 object-cover">
+                    <!-- Project card 1 -->
+                    <div
+                        class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff" alt="Screenshot of project 1"
+                            class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-primary mb-2">Nazwa Projektu 1</h3>
-                            <p class="text-text-secondary mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                            <a href="#" class="text-accent font-semibold hover:underline">Zobacz więcej &rarr;</a>
+                            <h3 class="text-xl font-bold text-text-primary mb-2">Project Name 1</h3>
+                            <p class="text-text-secondary mb-4">Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">See more &rarr;</a>
                         </div>
                     </div>
-                    <!-- Karta projektu 2 -->
-                    <div class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/10b981/ffffff" alt="Zrzut ekranu projektu 2" class="w-full h-48 object-cover">
+                    <!-- Project card 2 -->
+                    <div
+                        class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/10b981/ffffff" alt="Screenshot of project 2"
+                            class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-primary mb-2">Nazwa Projektu 2</h3>
-                            <p class="text-text-secondary mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                             <a href="#" class="text-accent font-semibold hover:underline">Zobacz więcej &rarr;</a>
+                            <h3 class="text-xl font-bold text-text-primary mb-2">Project Name 2</h3>
+                            <p class="text-text-secondary mb-4">Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">See more &rarr;</a>
                         </div>
                     </div>
-                    <!-- Karta projektu 3 -->
-                    <div class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/f59e0b/ffffff" alt="Zrzut ekranu projektu 3" class="w-full h-48 object-cover">
+                    <!-- Project card 3 -->
+                    <div
+                        class="bg-slate-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/f59e0b/ffffff" alt="Screenshot of project 3"
+                            class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-primary mb-2">Nazwa Projektu 3</h3>
-                            <p class="text-text-secondary mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                             <a href="#" class="text-accent font-semibold hover:underline">Zobacz więcej &rarr;</a>
+                            <h3 class="text-xl font-bold text-text-primary mb-2">Project Name 3</h3>
+                            <p class="text-text-secondary mb-4">Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">See more &rarr;</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sekcja "Kontakt" (#contact) -->
+            <!-- "Contact" section (#contact) -->
             <section id="contact" class="py-12">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Skontaktuj się</h2>
-                    <p class="text-lg text-text-secondary mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Contact me</h2>
+                    <p class="text-lg text-text-secondary mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                 </div>
-                
+
                 <div class="max-w-xl mx-auto">
-                    <!-- Przywrócony formularz kontaktowy -->
+                    <!-- Contact form -->
                     <form action="#" method="POST" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-700">Imię</label>
-                            <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent">
+                            <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+                            <input type="text" name="name" id="name" required
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-                            <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent">
+                            <input type="email" name="email" id="email" required
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-slate-700">Wiadomość</label>
-                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent"></textarea>
+                            <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-accent focus:border-accent"></textarea>
                         </div>
                         <div>
-                            <button type="submit" class="w-full bg-accent text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-bold">
-                                Wyślij wiadomość
+                            <button type="submit"
+                                class="w-full bg-accent text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-bold">
+                                Send message
                             </button>
                         </div>
                     </form>
-                    
-                    <!-- Ikony mediów społecznościowych -->
+
+                    <!-- Social media icons -->
                     <div class="mt-12 text-center">
-                        <p class="text-text-secondary mb-4">Znajdziesz mnie również na:</p>
+                        <p class="text-text-secondary mb-4">You can also find me on:</p>
                         <div class="flex justify-center space-x-6">
-                            <a href="#" aria-label="Profil LinkedIn" class="text-slate-500 hover:text-accent transition-colors">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <a href="#" aria-label="LinkedIn Profile"
+                                class="text-slate-500 hover:text-accent transition-colors">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
                             </a>
-                            <a href="#" aria-label="Profil Facebook" class="text-slate-500 hover:text-accent transition-colors">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /></svg>
+                            <a href="#" aria-label="Facebook Profile"
+                                class="text-slate-500 hover:text-accent transition-colors">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -189,38 +254,45 @@
             </section>
         </main>
 
-        <!-- ================================================== -->
-        <!-- Panel Stopki (Footer) -->
-        <!-- ================================================== -->
         <footer class="bg-panel-bg rounded-2xl shadow-main">
             <div class="mx-auto px-6 py-5 text-center text-text-secondary">
                 <p>created by ...</p>
             </div>
         </footer>
 
-    </div> <!-- Koniec wrappera paneli -->
+    </div> <!-- End of panels wrapper -->
 
-    <!-- Skrypt do obsługi menu mobilnego (bez zmian) -->
+    <!-- Script for mobile menu handling (bez zmian) -->
     <script>
-      const hamburgerButton = document.getElementById('hamburger-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuLinks = document.querySelectorAll('#mobile-menu a');
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('#mobile-menu a');
 
-      const toggleMenu = () => {
-        const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
-        mobileMenu.classList.toggle('hidden');
-        hamburgerButton.setAttribute('aria-expanded', !isExpanded);
-      };
+        const toggleMenu = () => {
+            const isMenuOpen = hamburgerButton.classList.contains('is-active');
 
-      hamburgerButton.addEventListener('click', toggleMenu);
-      
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (!mobileMenu.classList.contains('hidden')) {
-            toggleMenu();
-          }
+            hamburgerButton.setAttribute('aria-expanded', !isMenuOpen);
+            hamburgerButton.classList.toggle('is-active');
+
+            if (!isMenuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+            }
+        };
+
+        hamburgerButton.addEventListener('click', toggleMenu);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (hamburgerButton.classList.contains('is-active')) {
+                    toggleMenu();
+                }
+            });
         });
-      });
     </script>
 </body>
+
 </html>
