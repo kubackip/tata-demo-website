@@ -69,34 +69,36 @@
 <body class="bg-page-bg text-text-primary font-sans p-4 md:p-8">
 
     <div class="max-w-7xl mx-auto grid gap-6">
-
         <header
             class="bg-panel-bg rounded-2xl shadow-main overflow-hidden sticky top-0 z-50 transition-all duration-300">
             <div class="mx-auto px-6">
                 <div class="flex justify-between items-center h-20">
                     <a href="#" class="text-xl font-bold text-text-primary hover:text-accent transition-colors">
-                        my webpage
+                        TWOJE LOGO/NAZWA
                     </a>
 
+                    <!-- desktop menu -->
                     <nav class="hidden md:flex">
                         <ul class="flex space-x-8">
                             <li><a href="#about"
-                                    class="text-text-secondary hover:text-accent font-medium transition-colors">About
-                                    me</a></li>
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">O
+                                    mnie</a></li>
+                            <li><a href="#specialization"
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Kompetencje</a>
+                            </li>
+                            <li><a href="#services"
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Usługi</a>
+                            </li>
                             <li><a href="#projects"
-                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Projects</a>
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Realizacje</a>
                             </li>
                             <li><a href="#contact"
-                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Contact</a>
+                                    class="text-text-secondary hover:text-accent font-medium transition-colors">Kontakt</a>
                             </li>
                         </ul>
                     </nav>
 
                     <div class="md:hidden">
-                        <!-- ================================================== -->
-                        <!-- ZMIANA: Poprawiono strukturę hamburgera, aby zapewnić jednakową grubość kresek -->
-                        <!-- Zamiast 'my-1.5' na środkowej kresce, używamy 'space-y-1.5' na kontenerze, co zapewnia spójne renderowanie. -->
-                        <!-- ================================================== -->
                         <button id="hamburger-button" aria-label="Open menu" aria-controls="mobile-menu"
                             aria-expanded="false"
                             class="hamburger-button text-text-primary focus:outline-none w-8 h-8 flex flex-col justify-center items-center">
@@ -111,17 +113,24 @@
                     </div>
                 </div>
 
+                <!-- Zaktualizowane menu mobilne -->
                 <div id="mobile-menu"
                     class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
                     <ul class="flex flex-col space-y-4 pt-4 pb-4 border-t border-slate-200">
                         <li><a href="#about"
-                                class="block text-text-secondary hover:text-accent font-medium transition-colors">About
-                                me</a></li>
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">O
+                                mnie</a></li>
+                        <li><a href="#specialization"
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Kompetencje</a>
+                        </li>
+                        <li><a href="#services"
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Usługi</a>
+                        </li>
                         <li><a href="#projects"
-                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Projects</a>
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Realizacje</a>
                         </li>
                         <li><a href="#contact"
-                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Contact</a>
+                                class="block text-text-secondary hover:text-accent font-medium transition-colors">Kontakt</a>
                         </li>
                     </ul>
                 </div>
