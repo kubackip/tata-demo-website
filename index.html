@@ -137,32 +137,37 @@
             </div>
         </header>
 
-        <main id="main-content" class="bg-panel-bg rounded-3xl shadow-main p-6 md:p-10 transition-all duration-300">
-            <!-- "About me" section (#about) -->
-            <section id="about" class="py-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                    <!-- Profile picture -->
-                    <div class="md:col-span-1 flex justify-center">
-                        <img src="https://placehold.co/250x250/e2e8f0/334155" alt="Profile picture"
-                            class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg">
-                    </div>
-                    <!-- Biography -->
-                    <div class="md:col-span-2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Ekspert Automatyki Kolejowej
-                            SRK i ERTMS</h2>
-                        <p class="text-lg text-text-secondary mb-6 max-w-2xl mx-auto md:mx-0">
-                            Z ponad 10-letnim doświadczeniem pomagam producentom i wykonawcom skrócić proces
-                            certyfikacji, zmniejszyć ryzyko opóźnień i uzyskać szybszy zwrot z inwestycji, gwarantując
-                            100% zgodności z wymaganiami UTK/TSI oraz normami RAMS.
-                        </p>
+        <main id="main-content" class="bg-panel-bg rounded-3xl shadow-main overflow-hidden transition-all duration-300">
+            <section id="about" class="relative">
+                <div class="absolute inset-0">
+                    <img src="img/image-bg.jpg"
+                        alt="Tło przedstawiające infrastrukturę kolejową" class="w-full h-full object-cover">
+                    <!-- Nakładka gradientowa dla czytelności tekstu -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
+                </div>
+
+                <div class="relative max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <!-- Kolumna z tekstem -->
+                        <div class="text-center md:text-left">
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                                Ekspert Automatyki Kolejowej SRK i ERTMS
+                            </h1>
+                            <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto md:mx-0">
+                                Z ponad 10-letnim doświadczeniem pomagam producentom i wykonawcom skrócić proces
+                                certyfikacji, zmniejszyć ryzyko opóźnień i uzyskać szybszy zwrot z inwestycji,
+                                gwarantując 100% zgodności z wymaganiami UTK/TSI oraz normami RAMS.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- ================================================== -->
             <!-- Specjalizacja i Doświadczenie -->
+            <!-- ZMIANA: Dodano padding poziomy (px-6 md:px-10) -->
             <!-- ================================================== -->
-            <section id="specialization" class="py-12">
+            <section id="specialization" class="py-12 px-6 md:px-10">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Specjalizacja i Doświadczenie</h2>
                     <p class="text-lg text-text-secondary mt-2">Kluczowe kompetencje i zrealizowane zadania.</p>
@@ -269,8 +274,9 @@
 
             <!-- ================================================== -->
             <!-- Dlaczego warto? -->
+            <!-- ZMIANA: Dodano padding poziomy (px-6 md:px-10) -->
             <!-- ================================================== -->
-            <section id="benefits" class="py-12">
+            <section id="benefits" class="py-12 px-6 md:px-10">
                 <div class="bg-slate-100 rounded-3xl p-8 md:p-12 shadow-modern-lift">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Dlaczego Warto?</h2>
@@ -333,8 +339,9 @@
 
             <!-- ================================================== -->
             <!-- Usługi -->
+            <!-- ZMIANA: Dodano padding poziomy (px-6 md:px-10) -->
             <!-- ================================================== -->
-            <section id="services" class="py-12">
+            <section id="services" class="py-12 px-6 md:px-10">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Usługi</h2>
                     <p class="text-lg text-text-secondary mt-2">Kompleksowe wsparcie na każdym etapie projektu.</p>
@@ -379,7 +386,8 @@
             </section>
 
             <!-- "Projects" section (#projects) -->
-            <section id="projects" class="py-12">
+            <!-- ZMIANA: Dodano padding poziomy (px-6 md:px-10) -->
+            <section id="projects" class="py-12 px-6 md:px-10">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Realizacje</h2>
                     <p class="text-lg text-text-secondary mt-2">Przykłady wdrożeń oraz <span
@@ -427,7 +435,7 @@
             </section>
 
             <!-- "Contact" section (#contact) -->
-            <section id="contact" class="py-12">
+            <section id="contact" class="py-12 px-6 md:px-10">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Skontaktuj się</h2>
                     <p class="text-lg text-text-secondary mt-2">Wypełnij formularz lub skorzystaj z danych poniżej.</p>
