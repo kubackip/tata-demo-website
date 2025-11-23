@@ -345,7 +345,39 @@
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- card 1 -->
+            <!-- card -->
+            <div
+              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
+              style="animation-delay: 300ms"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-primary mb-1">
+                  Dowody Bezpieczeństwa
+                </h3>
+                <p class="text-text-secondary">
+                  Opracowanie ponad 30 dowodów SASC zaakceptowanych przez UTK.
+                </p>
+              </div>
+            </div>
+            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 100ms"
@@ -378,7 +410,7 @@
                 </p>
               </div>
             </div>
-            <!-- card 2 -->
+            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 200ms"
@@ -411,39 +443,7 @@
                 </p>
               </div>
             </div>
-            <!-- card 3 -->
-            <div
-              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 300ms"
-            >
-              <div
-                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Dowody Bezpieczeństwa
-                </h3>
-                <p class="text-text-secondary">
-                  Opracowanie ponad 30 dowodów SASC zaakceptowanych przez UTK.
-                </p>
-              </div>
-            </div>
-            <!-- card 4 -->
+            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 100ms"
@@ -476,7 +476,7 @@
                 </p>
               </div>
             </div>
-            <!-- card 5 -->
+            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 200ms"
@@ -509,7 +509,7 @@
                 </p>
               </div>
             </div>
-            <!-- card 6 -->
+            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 300ms"
@@ -820,129 +820,28 @@
           </div>
         </section>
 
-        <!-- ================================================== -->
-        <!-- POCZĄTEK SEKCJI Z UPROSZCZONYM FORMULARZEM -->
-        <!-- ================================================== -->
         <section id="contact" class="py-12 px-6 md:px-10">
           <div class="text-center mb-12 opacity-0 animate-on-scroll">
             <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
               Skontaktuj się
             </h2>
             <p class="text-lg text-text-secondary mt-2">
-              Wypełnij formularz lub skorzystaj z danych poniżej.
+              Skorzystaj z danych kontaktowych poniżej.
             </p>
           </div>
 
-          <div
-            class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
-          >
-            <!-- Kolumna z formularzem -->
+          <!-- Kontener wyśrodkowany (zamiast grid) -->
+          <div class="max-w-2xl mx-auto">
+            <!-- Karta z danymi kontaktowymi -->
             <div
-              class="opacity-0 animate-on-scroll"
-              style="animation-delay: 100ms"
-            >
-              <h3 class="text-xl font-bold text-text-primary text-center mb-6">
-                Wyślij wiadomość
-              </h3>
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                class="space-y-6"
-              >
-                <!-- Input z Twoim kluczem dostępu z web3forms.com -->
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="TUTAJ_WKLEJ_SWÓJ_KLUCZ_DOSTĘPU"
-                />
-
-                <!-- BEZ ZMIAN: Ten ukryty input ustawia stały temat maila, który otrzymasz -->
-                <input
-                  type="hidden"
-                  name="subject"
-                  value="Nowa wiadomość ze strony - Automatyka Kolejowa"
-                />
-
-                <!-- Pole: Imię i nazwisko -->
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-slate-700"
-                    >Imię i nazwisko</label
-                  >
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent"
-                  />
-                </div>
-
-                <!-- Pole: Adres email użytkownika -->
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-slate-700"
-                    >Twój adres email</label
-                  >
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent"
-                  />
-                </div>
-
-                <!-- USUNIĘTO: Pole na temat wiadomości -->
-
-                <!-- Pole: Wiadomość -->
-                <div>
-                  <label
-                    for="message"
-                    class="block text-sm font-medium text-slate-700"
-                    >Wiadomość</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent"
-                  ></textarea>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    class="w-full flex items-center justify-center gap-x-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-bold transform hover:scale-[1.02]"
-                  >
-                    Wyślij wiadomość
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            <!-- Kolumna z danymi kontaktowymi (pozostaje bez zmian) -->
-            <div
-              class="bg-slate-50 p-8 rounded-xl opacity-0 animate-on-scroll"
+              class="bg-slate-50 p-8 rounded-xl opacity-0 animate-on-scroll shadow-sm border border-slate-100"
               style="animation-delay: 200ms"
             >
-              <h3 class="text-xl font-bold text-text-primary mb-6 text-center">
+              <h3 class="text-xl font-bold text-text-primary mb-8 text-center">
                 Dane kontaktowe
               </h3>
-              <div class="space-y-5">
+              <div class="space-y-6">
+                <!-- Imię i Nazwisko -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -967,6 +866,8 @@
                     <p class="text-sm text-text-secondary">Forma prawna: JDG</p>
                   </div>
                 </div>
+
+                <!-- NIP i Adres -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -992,6 +893,8 @@
                     </p>
                   </div>
                 </div>
+
+                <!-- Telefon i Email -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -1015,17 +918,18 @@
                     </p>
                     <a
                       href="tel:+48XXXXXXXXX"
-                      class="text-sm text-accent hover:underline"
+                      class="text-sm text-accent hover:underline block"
                       >_tutaj telefon_</a
                     >
-                    <br />
                     <a
                       href="mailto:jaroslawkubacki40@gmail.com"
-                      class="text-sm text-accent hover:underline"
+                      class="text-sm text-accent hover:underline block"
                       >jaroslawkubacki40@gmail.com</a
                     >
                   </div>
                 </div>
+
+                <!-- Godziny pracy -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -1048,6 +952,8 @@
                     <p class="text-sm text-text-secondary">pn–pt: 8:00–16:00</p>
                   </div>
                 </div>
+
+                <!-- Lokalizacja -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -1081,19 +987,20 @@
             </div>
           </div>
 
+          <!-- Social Media - Ikony powiększone do w-12 h-12 -->
           <div
             class="mt-16 text-center opacity-0 animate-on-scroll"
             style="animation-delay: 300ms"
           >
-            <p class="text-text-secondary mb-4">Znajdziesz mnie również na:</p>
-            <div class="flex justify-center space-x-8">
+            <p class="text-text-secondary mb-6">Znajdziesz mnie również na:</p>
+            <div class="flex justify-center space-x-10">
               <a
                 href="#"
                 aria-label="LinkedIn Profile"
-                class="text-[#0A66C2] hover:opacity-80 transition-opacity"
+                class="text-[#0A66C2] hover:opacity-80 transition-opacity transform hover:scale-110 duration-300"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="w-12 h-12"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -1106,10 +1013,10 @@
               <a
                 href="#"
                 aria-label="Facebook Profile"
-                class="text-[#1877F2] hover:opacity-80 transition-opacity"
+                class="text-[#1877F2] hover:opacity-80 transition-opacity transform hover:scale-110 duration-300"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="w-12 h-12"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
