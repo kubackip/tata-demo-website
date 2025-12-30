@@ -6,7 +6,7 @@
     <title>Jarosław Kubacki - Ekspert Automatyki Kolejowej SRK i ERTMS</title>
     <meta
       name="description"
-      content="A modern, single-page business card website with separate panels for navigation, content, and footer."
+      content="Ekspert w dziedzinie automatyki kolejowej, SRK, ERTMS oraz procesów certyfikacji."
     />
 
     <!-- Tailwind CSS v3 Script (Play CDN) -->
@@ -43,9 +43,16 @@
                   transform: "translateY(0)",
                 },
               },
+              // Animacja dla sekcji Zaufali Nam (Marquee)
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
             },
             animation: {
               "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+              // Czas trwania animacji przewijania (40s)
+              scroll: "scroll 40s linear infinite",
             },
           },
         },
@@ -57,10 +64,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -81,11 +84,21 @@
       .hamburger-button.is-active .hamburger-line-bottom {
         transform: translateY(-8px) rotate(-45deg);
       }
+
+      /* Ukrycie paska przewijania dla marquee (estetyka) */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
 
   <body class="bg-page-bg text-text-primary font-sans p-4 md:p-8">
     <div class="max-w-7xl mx-auto grid gap-6">
+      <!-- HEADER -->
       <header
         class="bg-panel-bg/80 backdrop-blur-lg rounded-3xl shadow-main overflow-hidden sticky top-0 z-50 transition-all"
       >
@@ -121,14 +134,14 @@
                     <a
                       href="#specialization"
                       class="text-text-secondary hover:text-accent font-medium transition-colors"
-                      >Kompetencje</a
+                      >Usługi</a
                     >
                   </li>
                   <li>
                     <a
-                      href="#services"
+                      href="#benefits"
                       class="text-text-secondary hover:text-accent font-medium transition-colors"
-                      >Usługi</a
+                      >Dlaczego my?</a
                     >
                   </li>
                   <li>
@@ -148,7 +161,7 @@
                 </ul>
               </nav>
 
-              <!-- ZMIANA 2: Ikony Social Media (Desktop) - zmniejszone i oddzielone separatorem -->
+              <!-- Ikony Social Media (Desktop) -->
               <div
                 class="flex items-center space-x-4 border-l border-slate-200 pl-8"
               >
@@ -230,14 +243,14 @@
                 <a
                   href="#specialization"
                   class="block text-text-secondary hover:text-accent font-medium transition-colors"
-                  >Kompetencje</a
+                  >Usługi</a
                 >
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#benefits"
                   class="block text-text-secondary hover:text-accent font-medium transition-colors"
-                  >Usługi</a
+                  >Dlaczego my?</a
                 >
               </li>
               <li>
@@ -255,38 +268,19 @@
                 >
               </li>
             </ul>
-
-            <!-- social icons -->
+            <!-- mobile social icons -->
             <div
               class="flex justify-center space-x-6 pb-6 border-t border-slate-100 pt-4"
             >
-              <a
-                href="#"
-                aria-label="LinkedIn Profile"
-                class="text-[#0A66C2] hover:opacity-80 transition-opacity"
-              >
-                <svg
-                  class="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
+              <a href="#" class="text-[#0A66C2]">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                   />
                 </svg>
               </a>
-              <a
-                href="#"
-                aria-label="Facebook Profile"
-                class="text-[#1877F2] hover:opacity-80 transition-opacity"
-              >
-                <svg
-                  class="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
+              <a href="#" class="text-[#1877F2]">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
                   />
@@ -296,6 +290,7 @@
           </div>
         </div>
       </header>
+
       <main
         id="main-content"
         class="bg-panel-bg rounded-3xl shadow-main overflow-hidden transition-all duration-300"
@@ -338,46 +333,13 @@
         <section id="specialization" class="py-12 px-6 md:px-10">
           <div class="text-center mb-12 opacity-0 animate-on-scroll">
             <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-              Specjalizacja i Doświadczenie
+              Usługi i Kluczowe Doświadczenie
             </h2>
             <p class="text-lg text-text-secondary mt-2">
-              Kluczowe kompetencje i zrealizowane zadania.
+              Kompleksowe wsparcie na każdym etapie projektu.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- card -->
-            <div
-              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 300ms"
-            >
-              <div
-                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Dowody Bezpieczeństwa
-                </h3>
-                <p class="text-text-secondary">
-                  Opracowanie ponad 30 dowodów SASC zaakceptowanych przez UTK.
-                </p>
-              </div>
-            </div>
-            <!-- card -->
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 100ms"
@@ -402,15 +364,17 @@
               </div>
               <div>
                 <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Analizy Ryzyka CSMRA
+                  Dowody Bezpieczeństwa SASC
                 </h3>
-                <p class="text-text-secondary">
-                  Ponad 20 zrealizowanych analiz ryzyka dla podsystemów
-                  kolejowych.
+                <p class="text-text-secondary text-sm leading-relaxed">
+                  Oferuję opracowanie dowodów bezpieczeństwa SASC zgodnych z
+                  PN-EN 50128 dla całego cyklu życia podsystemu, zapewnia pełną
+                  zgodność z wymaganiami i gwarantuje akceptację UTK na etapie
+                  dopuszczenia.
                 </p>
               </div>
             </div>
-            <!-- card -->
+
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 200ms"
@@ -435,81 +399,17 @@
               </div>
               <div>
                 <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Procesy Certyfikacyjne
+                  Wsparcie Certyfikacji WE Urządzeń
                 </h3>
-                <p class="text-text-secondary">
-                  Ponad 60 przeprowadzonych procesów z jednostkami
-                  notyfikowanymi.
+                <p class="text-text-secondary text-sm leading-relaxed">
+                  Zapewniam wsparcie w procesach certyfikacyjnych urządzeń SRK i
+                  systemów transmisyjnych, ponad 60 przeprowadzonych procesów z
+                  jednostkami notyfikowanymi, kompletowanie dokumentacji, w
+                  efekcie niższe koszty i czas zwrotu poniesionych nakładów.
                 </p>
               </div>
             </div>
-            <!-- card -->
-            <div
-              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 100ms"
-            >
-              <div
-                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Systemy Zarządzania SMS
-                </h3>
-                <p class="text-text-secondary">
-                  Doskonała znajomość i wdrażanie systemów zarządzania
-                  bezpieczeństwem.
-                </p>
-              </div>
-            </div>
-            <!-- card -->
-            <div
-              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 200ms"
-            >
-              <div
-                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Współpraca z Liderami
-                </h3>
-                <p class="text-text-secondary">
-                  Doświadczenie w pracy z: ALSTOM, BUDIMEX, KOMBOD, STRABAG i
-                  innymi.
-                </p>
-              </div>
-            </div>
-            <!-- card -->
+
             <div
               class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
               style="animation-delay: 300ms"
@@ -528,17 +428,132 @@
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                   />
                 </svg>
               </div>
               <div>
                 <h3 class="text-lg font-bold text-text-primary mb-1">
-                  Systemy Transmisyjne
+                  Analizy Ryzyka CSM-RA
                 </h3>
-                <p class="text-text-secondary">
-                  Biegła znajomość systemów transmisyjnych, w tym SDH i opto.
+                <p class="text-text-secondary text-sm leading-relaxed">
+                  Wykonuję analizy ryzyka CSM-RA dla podsystemu STEROWANIE
+                  (także urządzeń staroużytecznych), co zapewnia zgodność z
+                  obowiązującymi normami.
                 </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
+              style="animation-delay: 400ms"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-primary mb-1">
+                  Opracowanie DTR i Dokumentacji
+                </h3>
+                <p class="text-text-secondary text-sm leading-relaxed">
+                  Reprezentuję interesy klienta przed jednostkami
+                  notyfikowanymi, co zmniejsza ryzyko odrzuceń i powtórzeń
+                  procesów certyfikacji.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
+              style="animation-delay: 500ms"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-primary mb-1">
+                  Szkolenia z wymagań bezpieczeństwa
+                </h3>
+                <p class="text-text-secondary text-sm leading-relaxed">
+                  Prowadzę szkolenia z zakresu bezpieczeństwa kolejowego, analiz
+                  ryzyka, certyfikacji podsystemu, wymagań formalnych.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 rounded-xl flex items-start space-x-4 transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
+              style="animation-delay: 600ms"
+            >
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 text-accent rounded-full flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-primary mb-2">
+                  Dodatkowe Kompetencje
+                </h3>
+                <ul
+                  class="text-text-secondary text-sm space-y-2 list-disc pl-4"
+                >
+                  <li>
+                    <strong>Systemy Zarządzania SMS:</strong> Wdrażanie systemów
+                    zarządzania bezpieczeństwem.
+                  </li>
+                  <li>
+                    <strong>Systemy sterowania ERTMS:</strong> GSM-R, systemy
+                    transmisyjne i SRK.
+                  </li>
+                  <li>
+                    <strong>Normy:</strong> Wymagania zasadnicze dla podsystemu
+                    STEROWANIE.
+                  </li>
+                  <li>Współpraca z Liderami branży.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -550,112 +565,142 @@
           >
             <div class="text-center mb-12">
               <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-                Dlaczego Warto?
+                Dlaczego Warto z Nami Współpracować?
               </h2>
-              <p class="text-lg text-text-secondary mt-2">
-                Kompetencje eksperta na zlecenie lub w ramach umowy ramowej.
+              <p class="text-lg text-text-secondary mt-4 max-w-3xl mx-auto">
+                Wybierając nasze usługi, zyskujesz dostęp do kompetencji
+                eksperckich w branży automatyki kolejowej i dedykowanego
+                wsparcia, które przekłada się na realne korzyści dla Twojego
+                projektu. Działam jako Twój ekspert na zlecenie lub w ramach
+                elastycznej umowy ramowej, zawsze z myślą o efektywności i
+                bezpieczeństwie.
               </p>
             </div>
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             >
               <div
-                class="flex items-center space-x-4 opacity-0 animate-on-scroll"
+                class="flex items-start space-x-4 opacity-0 animate-on-scroll"
                 style="animation-delay: 200ms"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-green-500 flex-shrink-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                <div class="bg-white p-2 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-text-primary">
-                    100% skuteczności
+                  <h3 class="text-lg font-bold text-text-primary">
+                    Gwarantowana Skuteczność
                   </h3>
-                  <p class="text-text-secondary">
-                    Gwarancja powodzenia w procesach certyfikacyjnych.
+                  <p class="text-text-secondary mt-1">
+                    Zapewniam 100% skuteczności w procesach certyfikacyjnych, co
+                    oznacza pewność akceptacji ze strony Urzędu Transportu
+                    Kolejowego.
                   </p>
                 </div>
               </div>
+
               <div
-                class="flex items-center space-x-4 opacity-0 animate-on-scroll"
+                class="flex items-start space-x-4 opacity-0 animate-on-scroll"
                 style="animation-delay: 300ms"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-green-500 flex-shrink-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                <div class="bg-white p-2 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-text-primary">
-                    Szybszy zwrot z inwestycji
+                  <h3 class="text-lg font-bold text-text-primary">
+                    Szybszy Zwrot z Inwestycji
                   </h3>
-                  <p class="text-text-secondary">
-                    Krótszy czas wdrożenia i mniejsze koszty poprawek.
+                  <p class="text-text-secondary mt-1">
+                    Znacząco skracasz czas wdrożenia projektów i zwrotu
+                    inwestycji oraz minimalizujesz ryzyko kosztownych poprawek i
+                    opóźnień.
                   </p>
                 </div>
               </div>
+
               <div
-                class="flex items-center space-x-4 opacity-0 animate-on-scroll"
+                class="flex items-start space-x-4 opacity-0 animate-on-scroll"
                 style="animation-delay: 400ms"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-green-500 flex-shrink-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                <div class="bg-white p-2 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-text-primary">
-                    Bezpośrednie wsparcie
+                  <h3 class="text-lg font-bold text-text-primary">
+                    Bezpośrednie Wsparcie Eksperta
                   </h3>
-                  <p class="text-text-secondary">
-                    Dostęp do eksperta z wieloletnią praktyką w branży.
+                  <p class="text-text-secondary mt-1">
+                    Masz stały dostęp do eksperta z wieloletnią praktyką w
+                    branży kolejowej.
                   </p>
                 </div>
               </div>
+
               <div
-                class="flex items-center space-x-4 opacity-0 animate-on-scroll"
+                class="flex items-start space-x-4 opacity-0 animate-on-scroll"
                 style="animation-delay: 500ms"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-green-500 flex-shrink-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                <div class="bg-white p-2 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-text-primary">
-                    Zgodność z normami
+                  <h3 class="text-lg font-bold text-text-primary">
+                    Pełna Zgodność z Normami
                   </h3>
-                  <p class="text-text-secondary">
-                    Pełne dopasowanie do europejskich i krajowych wymagań.
+                  <p class="text-text-secondary mt-1">
+                    Gwarantuję zgodność z europejskimi oraz krajowymi
+                    wymaganiami bezpieczeństwa i interoperacyjności.
                   </p>
                 </div>
               </div>
@@ -663,75 +708,165 @@
           </div>
         </section>
 
-        <section id="services" class="py-12 px-6 md:px-10">
-          <div class="text-center mb-12 opacity-0 animate-on-scroll">
-            <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-              Usługi
+        <section id="clients" class="py-12 bg-white overflow-hidden">
+          <div class="text-center mb-10 opacity-0 animate-on-scroll">
+            <h2 class="text-2xl md:text-3xl font-bold text-text-primary">
+              Zaufali Nam
             </h2>
-            <p class="text-lg text-text-secondary mt-2">
-              Kompleksowe wsparcie na każdym etapie projektu.
-            </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- card 1 -->
-            <div
-              class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 flex flex-col transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 100ms"
-            >
-              <h3 class="text-xl font-bold text-text-primary mb-2">
-                Dowody Bezpieczeństwa (SASC, SIL)
-              </h3>
-              <p class="text-text-secondary mb-4 flex-grow">
-                Kompleksowe opracowanie dowodów bezpieczeństwa wg PN-EN 50128
-                dla Podsystemu, pokrywające cały cykl życia produktu.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200">
-                <span class="text-sm font-semibold text-accent">Korzyści:</span>
-                <p class="text-sm text-text-secondary">
-                  skrócenie wdrożenia, pełna zgodność, redukcja ryzyka,
-                  gwarancja akceptacji UTK.
-                </p>
+          <div
+            class="relative w-full flex overflow-hidden opacity-0 animate-on-scroll"
+            style="animation-delay: 200ms"
+          >
+            <div class="flex animate-scroll whitespace-nowrap py-4">
+              <div class="flex items-center space-x-12 mx-6">
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ATE</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ALSTOM</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >BUDIMEX</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ELKOL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ETA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >INFRAKOL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >KOMBUD</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >KZA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >MONAT</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PBiIK</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PORR</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PKM</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >RADIONIKA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >STRABAG</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >TRANS-TEL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >VOESTALPINE</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ZAiT</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ZUE</span
+                >
               </div>
-            </div>
-            <!-- card 2 -->
-            <div
-              class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 flex flex-col transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 200ms"
-            >
-              <h3 class="text-xl font-bold text-text-primary mb-2">
-                Wsparcie Certyfikacji Urządzeń SRK
-              </h3>
-              <p class="text-text-secondary mb-4 flex-grow">
-                Analiza ryzyka (CSMRA) w procesie zarządzania zmianą,
-                kompletowanie dokumentacji i wsparcie w uzyskaniu świadectw
-                dopuszczenia.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200">
-                <span class="text-sm font-semibold text-accent">Korzyści:</span>
-                <p class="text-sm text-text-secondary">
-                  szybsze certyfikaty, mniejsze koszty poprawek i opóźnień.
-                </p>
-              </div>
-            </div>
-            <!-- card 3 -->
-            <div
-              class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 flex flex-col transform transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-on-scroll"
-              style="animation-delay: 300ms"
-            >
-              <h3 class="text-xl font-bold text-text-primary mb-2">
-                Ekspert Techniczny Dokumentacji
-              </h3>
-              <p class="text-text-secondary mb-4 flex-grow">
-                Udział w audytach i inspekcjach, analiza dokumentacji
-                projektowej oraz reprezentowanie interesów klienta przed
-                jednostkami notyfikowanymi.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200">
-                <span class="text-sm font-semibold text-accent">Korzyści:</span>
-                <p class="text-sm text-text-secondary">
-                  mniejsze ryzyko odrzuceń i powtórzeń procesów certyfikacji.
-                </p>
+              <div class="flex items-center space-x-12 mx-6">
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ATE</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ALSTOM</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >BUDIMEX</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ELKOL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ETA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >INFRAKOL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >KOMBUD</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >KZA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >MONAT</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PBiIK</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PORR</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >PKM</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >RADIONIKA</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >STRABAG</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >TRANS-TEL</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >VOESTALPINE</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ZAiT</span
+                >
+                <span
+                  class="text-xl font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-4 py-2 rounded-md"
+                  >ZUE</span
+                >
               </div>
             </div>
           </div>
@@ -743,78 +878,48 @@
               Realizacje
             </h2>
             <p class="text-lg text-text-secondary mt-2">
-              Przykłady wdrożeń oraz
-              <span class="text-accent font-semibold"
-                >referencje od klientów</span
-              >, które potwierdzają skuteczność moich działań.
+              Przykłady dokumentacji i wizualizacja skali działań.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- card 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
-              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 opacity-0 animate-on-scroll"
+              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll"
               style="animation-delay: 100ms"
             >
               <img
-                src="https://placehold.co/600x400/3b82f6/ffffff"
-                alt="Screenshot of project 1"
-                class="w-full h-48 object-cover"
+                src="https://placehold.co/800x600/3b82f6/ffffff?text=Mapa+Wdro%C5%BCe%C5%84"
+                alt="Mapa wdrożeń"
+                class="w-full h-auto object-cover md:h-[400px]"
               />
               <div class="p-6">
-                <h3 class="text-xl font-bold text-text-primary mb-2">
-                  Mapa Wdrożeń SASC
+                <h3 class="text-2xl font-bold text-text-primary mb-2">
+                  Mapa Wdrożeń
                 </h3>
-                <p class="text-text-secondary mb-4">
-                  Wizualizacja zrealizowanych projektów na terenie Polski.
+                <p class="text-text-secondary">
+                  Wizualizacja lokalizacji zrealizowanych projektów i wdrożeń
+                  systemów na terenie kraju.
                 </p>
-                <a href="#" class="text-accent font-semibold hover:underline"
-                  >Zobacz więcej &rarr;</a
-                >
               </div>
             </div>
-            <!-- card 2 -->
+
             <div
-              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 opacity-0 animate-on-scroll"
+              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll"
               style="animation-delay: 200ms"
             >
               <img
-                src="https://placehold.co/600x400/10b981/ffffff"
-                alt="Screenshot of project 2"
-                class="w-full h-48 object-cover"
+                src="https://placehold.co/800x600/10b981/ffffff?text=Schemat+Wst%C4%85%C5%BCka"
+                alt="Schemat wstążka"
+                class="w-full h-auto object-cover md:h-[400px]"
               />
               <div class="p-6">
-                <h3 class="text-xl font-bold text-text-primary mb-2">
-                  Schematy i Zdjęcia
+                <h3 class="text-2xl font-bold text-text-primary mb-2">
+                  Schemat Wstążka
                 </h3>
-                <p class="text-text-secondary mb-4">
-                  (Zanonimizowane) przykłady dokumentacji i wdrożeń.
+                <p class="text-text-secondary">
+                  Szczegółowy schemat liniowy obrazujący zakres i strukturę
+                  wdrożonej infrastruktury.
                 </p>
-                <a href="#" class="text-accent font-semibold hover:underline"
-                  >Zobacz więcej &rarr;</a
-                >
-              </div>
-            </div>
-            <!-- card 3 -->
-            <div
-              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 opacity-0 animate-on-scroll"
-              style="animation-delay: 300ms"
-            >
-              <img
-                src="https://placehold.co/600x400/f59e0b/ffffff"
-                alt="Screenshot of project 3"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-text-primary mb-2">
-                  Opinie i Rekomendacje
-                </h3>
-                <p class="text-text-secondary mb-4">
-                  Cytaty i referencje od zadowolonych partnerów biznesowych.
-                </p>
-                <a href="#" class="text-accent font-semibold hover:underline"
-                  >Zobacz więcej &rarr;</a
-                >
               </div>
             </div>
           </div>
@@ -830,9 +935,7 @@
             </p>
           </div>
 
-          <!-- Kontener wyśrodkowany (zamiast grid) -->
           <div class="max-w-2xl mx-auto">
-            <!-- Karta z danymi kontaktowymi -->
             <div
               class="bg-slate-50 p-8 rounded-xl opacity-0 animate-on-scroll shadow-sm border border-slate-100"
               style="animation-delay: 200ms"
@@ -841,7 +944,6 @@
                 Dane kontaktowe
               </h3>
               <div class="space-y-6">
-                <!-- Imię i Nazwisko -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -867,7 +969,6 @@
                   </div>
                 </div>
 
-                <!-- NIP i Adres -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -894,7 +995,6 @@
                   </div>
                 </div>
 
-                <!-- Telefon i Email -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -929,7 +1029,6 @@
                   </div>
                 </div>
 
-                <!-- Godziny pracy -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -953,7 +1052,6 @@
                   </div>
                 </div>
 
-                <!-- Lokalizacja -->
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0 w-6 h-6 text-accent">
                     <svg
@@ -987,7 +1085,6 @@
             </div>
           </div>
 
-          <!-- Social Media - Ikony powiększone do w-12 h-12 -->
           <div
             class="mt-16 text-center opacity-0 animate-on-scroll"
             style="animation-delay: 300ms"
@@ -1040,7 +1137,6 @@
       </footer>
     </div>
 
-    <!-- Script for mobile menu handling -->
     <script>
       const hamburgerButton = document.getElementById("hamburger-button");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -1068,7 +1164,6 @@
       });
     </script>
 
-    <!-- scroll animations -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const animatedElements =
