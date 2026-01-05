@@ -9,10 +9,8 @@
       content="Ekspert w dziedzinie automatyki kolejowej, SRK, ERTMS oraz procesów certyfikacji."
     />
 
-    <!-- Tailwind CSS v3 Script (Play CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom configuration for Tailwind CSS -->
     <script>
       tailwind.config = {
         theme: {
@@ -59,7 +57,6 @@
       };
     </script>
 
-    <!-- Import fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -67,7 +64,6 @@
       rel="stylesheet"
     />
 
-    <!-- Custom styles for Hamburger-to-X animation -->
     <style>
       .hamburger-button .hamburger-line {
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -98,7 +94,6 @@
 
   <body class="bg-page-bg text-text-primary font-sans p-4 md:p-8">
     <div class="max-w-7xl mx-auto grid gap-6">
-      <!-- HEADER -->
       <header
         class="bg-panel-bg/80 backdrop-blur-lg rounded-3xl shadow-main overflow-hidden sticky top-0 z-50 transition-all"
       >
@@ -119,7 +114,6 @@
               </a>
             </div>
 
-            <!-- desktop menu + icons -->
             <div class="hidden md:flex items-center gap-8">
               <nav>
                 <ul class="flex space-x-8">
@@ -161,7 +155,6 @@
                 </ul>
               </nav>
 
-              <!-- Ikony Social Media (Desktop) -->
               <div
                 class="flex items-center space-x-4 border-l border-slate-200 pl-8"
               >
@@ -200,7 +193,6 @@
               </div>
             </div>
 
-            <!-- Mobile Hamburger -->
             <div class="md:hidden">
               <button
                 id="hamburger-button"
@@ -224,7 +216,6 @@
             </div>
           </div>
 
-          <!-- mobile menu -->
           <div
             id="mobile-menu"
             class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
@@ -268,7 +259,6 @@
                 >
               </li>
             </ul>
-            <!-- mobile social icons -->
             <div
               class="flex justify-center space-x-6 pb-6 border-t border-slate-100 pt-4"
             >
@@ -843,12 +833,10 @@
             </h2>
           </div>
 
-          <!-- Marquee Container -->
           <div
             class="relative w-full flex overflow-hidden opacity-0 animate-on-scroll"
             style="animation-delay: 200ms"
           >
-            <!-- Maska gradientowa po lewej i prawej stronie -->
             <div
               class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10"
             ></div>
@@ -856,266 +844,439 @@
               class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10"
             ></div>
 
-            <!-- Inner container -->
             <div class="flex animate-scroll whitespace-nowrap py-6">
-              <!-- Styl kafelka zdefiniowany raz, powielony dla firm -->
-              <!-- Kafelki mają: białe tło, cień, zaokrąglenie, efekt hover (uniesienie) -->
-
-              <!-- ZESTAW 1 -->
               <div class="flex items-center space-x-8 mx-4">
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/ate.png"
+                    alt="ATE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ATE</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/alstom.png"
+                    alt="ALSTOM Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ALSTOM</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/budimex.jpg"
+                    alt="BUDIMEX Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >BUDIMEX</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/elkol.png"
+                    alt="ELKOL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ELKOL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/eta.jpg"
+                    alt="ETA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ETA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/infrakol.png"
+                    alt="INFRAKOL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >INFRAKOL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/kombudsa.png"
+                    alt="KOMBUD Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >KOMBUD</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/kza.png"
+                    alt="KZA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >KZA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/monat.png"
+                    alt="MONAT Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >MONAT</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/pbiik.jpg"
+                    alt="PBiIK Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PBiIK</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/porr.png"
+                    alt="PORR Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PORR</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/pkm.jpg"
+                    alt="PKM Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PKM</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/radionika.png"
+                    alt="RADIONIKA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >RADIONIKA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/strabag.png"
+                    alt="STRABAG Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >STRABAG</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/transtel.png"
+                    alt="TRANS-TEL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >TRANS-TEL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/voestalpine.png"
+                    alt="VOESTALPINE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >VOESTALPINE</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/zait.jpg"
+                    alt="ZAiT Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ZAiT</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/zue.jpg"
+                    alt="ZUE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ZUE</span
                   >
                 </div>
               </div>
 
-              <!-- ZESTAW 2 (DUPLIKAT DLA PĘTLI) -->
               <div class="flex items-center space-x-8 mx-4">
-                <!-- Ten sam zestaw co wyżej, aby pętla była płynna -->
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/ate.png"
+                    alt="ATE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ATE</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/alstom.png"
+                    alt="ALSTOM Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ALSTOM</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/budimex.jpg"
+                    alt="BUDIMEX Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >BUDIMEX</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/elkol.png"
+                    alt="ELKOL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ELKOL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/eta.jpg"
+                    alt="ETA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ETA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/infrakol.png"
+                    alt="INFRAKOL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >INFRAKOL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/kombudsa.png"
+                    alt="KOMBUD Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >KOMBUD</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/kza.png"
+                    alt="KZA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >KZA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/monat.png"
+                    alt="MONAT Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >MONAT</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/pbiik.jpg"
+                    alt="PBiIK Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PBiIK</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/porr.png"
+                    alt="PORR Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PORR</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/pkm.jpg"
+                    alt="PKM Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >PKM</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/radionika.png"
+                    alt="RADIONIKA Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >RADIONIKA</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/strabag.png"
+                    alt="STRABAG Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >STRABAG</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/transtel.png"
+                    alt="TRANS-TEL Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >TRANS-TEL</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/voestalpine.png"
+                    alt="VOESTALPINE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >VOESTALPINE</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/zait.jpg"
+                    alt="ZAiT Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ZAiT</span
                   >
                 </div>
                 <div
-                  class="min-w-[160px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  class="min-w-[180px] h-20 bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.08)] flex items-center justify-center space-x-3 border border-slate-100 transform transition-transform hover:-translate-y-1 hover:shadow-lg px-4"
                 >
+                  <img
+                    src="/img/zue.jpg"
+                    alt="ZUE Logo"
+                    class="w-8 h-8 object-contain"
+                  />
                   <span class="text-lg font-bold text-slate-600 tracking-wider"
                     >ZUE</span
                   >
@@ -1141,7 +1302,7 @@
               style="animation-delay: 100ms"
             >
               <img
-                src="https://placehold.co/800x600/3b82f6/ffffff?text=Mapa+Wdro%C5%BCe%C5%84"
+                src="img/maparealizacji.png"
                 alt="Mapa wdrożeń"
                 class="w-full h-auto object-cover md:h-[400px]"
               />
@@ -1161,7 +1322,7 @@
               style="animation-delay: 200ms"
             >
               <img
-                src="https://placehold.co/800x600/10b981/ffffff?text=Schemat+Wst%C4%85%C5%BCka"
+                src="img/wstazka.png"
                 alt="Schemat wstążka"
                 class="w-full h-auto object-cover md:h-[400px]"
               />
