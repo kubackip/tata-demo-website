@@ -1286,7 +1286,7 @@
           </div>
         </section>
 
-        <section id="projects" class="py-12 px-6 md:px-10">
+        <section id="projects" class="py-12 px-6 md:px-10 relative">
           <div class="text-center mb-12 opacity-0 animate-on-scroll">
             <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
               Realizacje
@@ -1298,14 +1298,19 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
-              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll"
+              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll group"
               style="animation-delay: 100ms"
             >
-              <img
-                src="img/maparealizacji.png"
-                alt="Mapa wdrożeń"
-                class="w-full h-auto object-cover md:h-[400px]"
-              />
+              <div
+                class="overflow-hidden cursor-pointer"
+                onclick="openModal('img/maparealizacji.png')"
+              >
+                <img
+                  src="img/maparealizacji.png"
+                  alt="Mapa wdrożeń"
+                  class="w-full h-auto object-cover md:h-[400px] transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-text-primary mb-2">
                   Mapa Wdrożeń
@@ -1318,14 +1323,19 @@
             </div>
 
             <div
-              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll"
+              class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll group"
               style="animation-delay: 200ms"
             >
-              <img
-                src="img/wstazka.png"
-                alt="Schemat wstążka"
-                class="w-full h-auto object-cover md:h-[400px]"
-              />
+              <div
+                class="overflow-hidden cursor-pointer"
+                onclick="openModal('img/wstazka.png')"
+              >
+                <img
+                  src="img/wstazka.png"
+                  alt="Schemat wstążka"
+                  class="w-full h-auto object-cover md:h-[400px] transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-text-primary mb-2">
                   Schemat Wstążka
@@ -1338,6 +1348,27 @@
             </div>
           </div>
         </section>
+
+        <div
+          id="imageModal"
+          class="fixed inset-0 z-[9999] hidden bg-black/90 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300"
+          onclick="closeModal()"
+        >
+          <button
+            class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 focus:outline-none"
+            onclick="closeModal()"
+          >
+            &times;
+          </button>
+
+          <img
+            id="modalImg"
+            src=""
+            alt="Powiększenie"
+            class="max-w-full max-h-[90vh] rounded-md shadow-2xl transform scale-95 transition-transform duration-300"
+            onclick="event.stopPropagation()"
+          />
+        </div>
 
         <section id="contact" class="py-12 px-6 md:px-10">
           <div class="text-center mb-12 opacity-0 animate-on-scroll">
@@ -1598,6 +1629,45 @@
         animatedElements.forEach((el) => {
           observer.observe(el);
         });
+      });
+    </script>
+
+    <script>
+      function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+
+        modalImg.src = imageSrc;
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        setTimeout(() => {
+          modal.classList.remove("opacity-0");
+          modalImg.classList.remove("scale-95");
+          modalImg.classList.add("scale-100");
+        }, 10);
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+
+        modal.classList.add("opacity-0");
+        modalImg.classList.remove("scale-100");
+        modalImg.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.remove("flex");
+          modal.classList.add("hidden");
+          modalImg.src = "";
+        }, 300);
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
       });
     </script>
   </body>
