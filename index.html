@@ -16,11 +16,11 @@
         theme: {
           extend: {
             colors: {
-              accent: "#3b82f6", // Accent color (blue)
-              "page-bg": "#f1f5f9", // Page background (light gray)
-              "panel-bg": "#ffffff", // Background for panels (white)
-              "text-primary": "#1e293b", // Primary text color
-              "text-secondary": "#64748b", // Secondary text color
+              accent: "#3b82f6",
+              "page-bg": "#f1f5f9",
+              "panel-bg": "#ffffff",
+              "text-primary": "#1e293b",
+              "text-secondary": "#64748b",
             },
             fontFamily: {
               sans: ["Inter", "sans-serif"],
@@ -41,7 +41,6 @@
                   transform: "translateY(0)",
                 },
               },
-              // Animacja dla sekcji Zaufali Nam (Marquee)
               scroll: {
                 "0%": { transform: "translateX(0)" },
                 "100%": { transform: "translateX(-50%)" },
@@ -49,7 +48,6 @@
             },
             animation: {
               "fade-in-up": "fade-in-up 0.6s ease-out forwards",
-              // Czas trwania animacji przewijania (40s)
               scroll: "scroll 40s linear infinite",
             },
           },
@@ -82,7 +80,6 @@
         transform: translateY(-8px) rotate(-45deg);
       }
 
-      /* Ukrycie paska przewijania dla marquee (estetyka) */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
