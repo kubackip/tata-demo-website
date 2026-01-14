@@ -55,7 +55,7 @@
       };
     </script>
 
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1300,15 +1300,18 @@
               class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll group"
               style="animation-delay: 100ms"
             >
-              <div
-                class="overflow-hidden cursor-pointer"
-                onclick="openModal('img/maparealizacji.png')"
-              >
-                <img
-                  src="img/maparealizacji.png"
-                  alt="Mapa wdrożeń"
-                  class="w-full h-auto object-cover md:h-[400px] transition-transform duration-500 group-hover:scale-105"
-                />
+              <div class="overflow-hidden cursor-pointer">
+                <a
+                  href="https://www.google.com/maps/d/u/0/edit?hl=pl&mid=12ei_e-9UGEdIvB_d1dxq7VhafiINkQw&ll=51.58080039035619%2C17.57104042968752&z=7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="img/maparealizacji.png"
+                    alt="Mapa wdrożeń"
+                    class="w-full h-auto object-cover md:h-[400px] transition-transform duration-500 group-hover:scale-105"
+                  />
+                </a>
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-text-primary mb-2">
@@ -1325,23 +1328,35 @@
               class="bg-slate-50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 opacity-0 animate-on-scroll group"
               style="animation-delay: 200ms"
             >
-              <div
-                class="overflow-hidden cursor-pointer"
-                onclick="openModal('img/wstazka.png')"
+              <a
+                href="img/schemat_wstazka.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block overflow-hidden cursor-pointer"
+                title="Otwórz pełny schemat w PDF"
               >
                 <img
                   src="img/wstazka.png"
-                  alt="Schemat wstążka"
+                  alt="Podgląd schematu wstążka"
                   class="w-full h-auto object-cover md:h-[400px] transition-transform duration-500 group-hover:scale-105"
                 />
-              </div>
+              </a>
+
               <div class="p-6">
-                <h3 class="text-2xl font-bold text-text-primary mb-2">
-                  Schemat wstążka
-                </h3>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-2xl font-bold text-text-primary">
+                    Schemat wstążka
+                  </h3>
+                  <!-- Opcjonalnie: Mała ikonka PDF sugerująca format -->
+                  <span
+                    class="text-xs font-semibold bg-red-100 text-red-600 px-2 py-1 rounded"
+                    >PDF</span
+                  >
+                </div>
                 <p class="text-text-secondary">
                   Szczegółowy schemat liniowy obrazujący zakres i strukturę
-                  wdrożonej infrastruktury.
+                  wdrożonej infrastruktury. Kliknij, aby zobaczyć w pełnej
+                  jakości.
                 </p>
               </div>
             </div>
@@ -1462,10 +1477,7 @@
                     <p class="font-semibold text-text-primary">
                       Telefon i Email
                     </p>
-                    <a
-                      class="text-sm block"
-                      >+48 509 462 020</a
-                    >
+                    <a class="text-sm block">+48 509 462 020</a>
                     <a
                       href="mailto:jaroslawkubacki40@gmail.com"
                       class="text-sm text-accent hover:underline block"
@@ -1494,36 +1506,6 @@
                   <div>
                     <p class="font-semibold text-text-primary">Godziny pracy</p>
                     <p class="text-sm text-text-secondary">pn–pt: 8:00–16:00</p>
-                  </div>
-                </div>
-
-                <div class="flex items-start space-x-4">
-                  <div class="flex-shrink-0 w-6 h-6 text-accent">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-semibold text-text-primary">Lokalizacja</p>
-                    <a href="https://maps.app.goo.gl/DzewJYQZk8CpjaUq5" class="text-sm text-accent hover:underline" target="_blank" rel="noopener noreferrer"
-                      >Zobacz na mapie Google &rarr;</a
-                    >
                   </div>
                 </div>
               </div>
@@ -1629,45 +1611,6 @@
         animatedElements.forEach((el) => {
           observer.observe(el);
         });
-      });
-    </script>
-
-    <script>
-      function openModal(imageSrc) {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-
-        modalImg.src = imageSrc;
-
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-
-        setTimeout(() => {
-          modal.classList.remove("opacity-0");
-          modalImg.classList.remove("scale-95");
-          modalImg.classList.add("scale-100");
-        }, 10);
-      }
-
-      function closeModal() {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-
-        modal.classList.add("opacity-0");
-        modalImg.classList.remove("scale-100");
-        modalImg.classList.add("scale-95");
-
-        setTimeout(() => {
-          modal.classList.remove("flex");
-          modal.classList.add("hidden");
-          modalImg.src = "";
-        }, 300);
-      }
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeModal();
-        }
       });
     </script>
   </body>
