@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -75,7 +75,9 @@
 
     <style>
       .hamburger-button .hamburger-line {
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition:
+          transform 0.3s ease-in-out,
+          opacity 0.3s ease-in-out;
       }
 
       .hamburger-button.is-active .hamburger-line-top {
@@ -1526,6 +1528,86 @@
             </div>
           </div>
         </section>
+
+        <section
+          id="gallery"
+          class="py-12 px-6 md:px-10 border-t border-slate-100"
+        >
+          <div class="text-center mb-12 opacity-0 animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
+              Galeria
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="group relative aspect-[2/3] bg-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-modern-lift transition-all duration-300 cursor-pointer opacity-0 animate-on-scroll"
+              style="animation-delay: 100ms"
+              onclick="
+                openModal(
+                  '/img/gallery/s12.jpg',
+                )
+              "
+            >
+              <img
+                src="/img/gallery/s12.jpg"
+                alt=""
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-3xl drop-shadow-lg"
+                ></i>
+              </div>
+            </div>
+
+            <div
+              class="group relative aspect-[2/3] bg-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-modern-lift transition-all duration-300 cursor-pointer opacity-0 animate-on-scroll"
+              style="animation-delay: 200ms"
+              onclick="
+                openModal(
+                  '/img/gallery/s2.jpg',
+                )
+              "
+            >
+              <img
+                src="/img/gallery/s2.jpg"
+                alt=""
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-3xl drop-shadow-lg"
+                ></i>
+              </div>
+            </div>
+
+            <div
+              class="group relative aspect-[2/3] bg-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-modern-lift transition-all duration-300 cursor-pointer opacity-0 animate-on-scroll"
+              style="animation-delay: 300ms"
+              onclick="
+                openModal(
+                  '/img/gallery/s3.jpg',
+                )
+              "
+            >
+              <img
+                src="/img/gallery/s3.jpg"
+                alt=""
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-3xl drop-shadow-lg"
+                ></i>
+              </div>
+            </div>
       </main>
 
       <footer
@@ -1579,11 +1661,46 @@
           },
           {
             threshold: 0.1,
-          }
+          },
         );
         animatedElements.forEach((el) => {
           observer.observe(el);
         });
+      });
+    </script>
+
+    <script>
+      function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+
+        if (modal && modalImg) {
+          modalImg.src = imageSrc;
+          modal.classList.remove("hidden");
+          setTimeout(() => {
+            modal.classList.remove("opacity-0");
+          }, 10);
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+
+        if (modal) {
+          modal.classList.add("opacity-0");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+            document.getElementById("modalImg").src = "";
+            document.body.style.overflow = "";
+          }, 300);
+        }
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
       });
     </script>
   </body>
